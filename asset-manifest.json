@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/ShopifyChallenge/static/css/main.54084cbe.chunk.css",
+    "main.js": "/ShopifyChallenge/static/js/main.934c3941.chunk.js",
+    "main.js.map": "/ShopifyChallenge/static/js/main.934c3941.chunk.js.map",
+    "runtime-main.js": "/ShopifyChallenge/static/js/runtime-main.42222e69.js",
+    "runtime-main.js.map": "/ShopifyChallenge/static/js/runtime-main.42222e69.js.map",
+    "static/js/2.1c772017.chunk.js": "/ShopifyChallenge/static/js/2.1c772017.chunk.js",
+    "static/js/2.1c772017.chunk.js.map": "/ShopifyChallenge/static/js/2.1c772017.chunk.js.map",
+    "index.html": "/ShopifyChallenge/index.html",
+    "static/css/main.54084cbe.chunk.css.map": "/ShopifyChallenge/static/css/main.54084cbe.chunk.css.map",
+    "static/js/2.1c772017.chunk.js.LICENSE.txt": "/ShopifyChallenge/static/js/2.1c772017.chunk.js.LICENSE.txt",
+    "static/media/Help button.60f218fd.svg": "/ShopifyChallenge/static/media/Help button.60f218fd.svg",
+    "static/media/Hero.53ee0789.svg": "/ShopifyChallenge/static/media/Hero.53ee0789.svg",
+    "static/media/Nominate button.4b5c1e6c.svg": "/ShopifyChallenge/static/media/Nominate button.4b5c1e6c.svg",
+    "static/media/Shoppies logo.fdd1c851.svg": "/ShopifyChallenge/static/media/Shoppies logo.fdd1c851.svg",
+    "static/media/search.88c19f4c.svg": "/ShopifyChallenge/static/media/search.88c19f4c.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.42222e69.js",
+    "static/js/2.1c772017.chunk.js",
+    "static/css/main.54084cbe.chunk.css",
+    "static/js/main.934c3941.chunk.js"
+  ]
+}
