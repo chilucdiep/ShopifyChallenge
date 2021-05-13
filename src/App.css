@@ -134,12 +134,14 @@ header nav .search-bar::after {
 
 header nav .help-button {
   width: 60px;
-  -webkit-transition: all 4ms ease-in-out;
-  transition: all 4ms ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
 }
 
 header nav .help-button:hover {
-  opacity: 0.8;
+  opacity: 0.9;
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
 }
 
 header .hero-image {

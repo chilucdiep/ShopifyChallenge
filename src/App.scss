@@ -114,11 +114,12 @@ header {
   
       .help-button {
           width: 60px;
-          transition: all 4ms ease-in-out;
+          transition: all .2s ease-in-out;
       }
 
       .help-button:hover {
-          opacity: 0.8;
+          opacity: 0.9;
+          transform: scale(1.03);
       }
   }
 

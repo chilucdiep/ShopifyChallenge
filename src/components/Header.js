@@ -15,7 +15,7 @@ function Header(props) {
                     <img src={searchIcon} alt="Search icon"></img>
                 </div>
                 <div>
-                    <a href="https://github.com/chilucdiep/ShopifyChallenge"><img className="help-button" src={helpButton} alt="Help button"></img></a>
+                    <a href="https://github.com/chilucdiep/ShopifyChallenge" target="_blank"><img className="help-button" src={helpButton} alt="Help button"></img></a>
                 </div>
             </nav>
 
