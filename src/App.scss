@@ -1,0 +1,369 @@
+$desktop-h1-fontsize: 2.25rem;
+$desktop-h2-fontsize: 1.5rem;
+$desktop-p-fontsize: .75rem;
+$mobile-h1-fontsize: 1rem;
+$mobile-h2-fontsize: .65rem;
+$mobile-h3-fontsize: .35rem;
+$mobile-p-fontsize: .5rem;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #151515;
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  overflow-x: hidden;
+}
+
+img {
+  width: 100%;
+}
+
+h1 {
+  font-size: $mobile-h1-fontsize;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: $mobile-h2-fontsize;
+  font-weight: 500;
+}
+
+h3 {
+  font-size: $mobile-h3-fontsize;
+  font-weight: 400;
+}
+
+p {
+  font-size: $mobile-p-fontsize;
+  font-weight: 400;
+}
+
+.wrapper {
+  padding: 1.5em 1.5em;
+  padding-bottom: 0;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+header {
+  height: 30em;
+  
+  .nav-bg {
+      height: 6em;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      background-image: linear-gradient(to bottom,rgba(0,0,0,.7) 0%,rgba(0,0,0,0));
+  }
+
+  nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      height: 4em;
+  
+      img {
+          max-width: 80px;
+      }
+  
+      .search-bar {
+          display: flex;
+          position: relative;
+          max-width: 130px;
+  
+          #search-input {
+              background-color: transparent;
+              outline: none;
+              border: none;
+              padding-bottom: .3em;
+              color: #CFCFCF;
+              font-size: .5rem;
+              min-width: 100px;
+              margin: 0 .5em 0;
+              transition: all 200ms ease-out;
+              position: relative;
+          }
+  
+          #search-input::placeholder {
+              color: #898989;
+              font-size: .5rem;
+          }
+  
+          img {
+              padding-bottom: .3em;
+          }
+      }
+  
+      .search-bar::after {
+          content: "";
+          height: 1px;
+          width: 100%;
+          min-width: 100px;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          background-color: #898989;
+      }
+  
+      .help-button {
+          width: 60px;
+          transition: all 4ms ease-in-out;
+      }
+
+      .help-button:hover {
+          opacity: 0.8;
+      }
+  }
+
+  .hero-image {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+
+      img {
+          position: absolute;
+          top: 0;
+          z-index: -2;
+          height: 25em;
+      }
+  }
+
+  .hero-text {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 15em;
+      margin-top: 5em;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 50%, #000000 40%, #151515 100%, #151515 100%);
+
+      h2 {
+          margin-top: .4em;
+          color: #CFCFCF;
+      }
+  }
+}
+
+
+.movie-display {
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+
+  .movie-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    grid-gap: 1rem;
+    position: absolute;
+    top: -8em;
+
+    .movies {
+      display: flex;
+      flex-direction: column;
+      transition: all .4s ease-out;
+      position: relative;
+
+      .movie-poster {
+        max-width: 200px;
+        height: 320px;
+        border-radius: .4rem;
+        cursor: pointer;
+        margin-bottom: .6em;
+      }
+
+      .movie-name {
+        text-align: center;
+        color: #CFCFCF;
+        margin-bottom: 2em;
+      }
+
+      .overlay-button {
+        position: absolute;
+        top: 16em;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 150px;
+        backdrop-filter: blur(7px);
+        opacity: 0;
+        transition: all .6s ease-out;
+      }
+    }
+
+    .movies:hover {
+      transform: scale(1.1);
+
+      .overlay-button {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+
+
+@media screen and (min-width: 600px) {
+  header {
+      nav {
+          img {
+              max-width: 150px;
+          }
+
+          .search-bar {
+              max-width: 200px;
+
+              #search-input {
+                  font-size: .75rem;
+                  min-width: 170px;
+                  margin: 0 0 0 1em;
+              }
+
+              #search-input::placeholder {
+                  font-size: .75rem;
+              }
+          }
+
+          .search-bar::after {
+              min-width: 20px;
+          }
+
+          .help-button {
+              width: 85px;
+          }
+      }
+  }
+}
+
+@media screen and (min-width: 860px) {
+  h1 {
+      font-size: $desktop-h1-fontsize;
+  }
+  
+  h2 {
+      font-size: $desktop-h2-fontsize;
+  }
+  
+  p {
+      font-size: $desktop-p-fontsize;
+  }
+
+  .wrapper {
+      padding: 2em 4em;
+  }
+
+  header {
+      .hero-text {
+          margin-top: 15em;
+          background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 30%, #000000 70%, #151515 100%, #151515 100%);
+      }
+
+      .hero-image {
+          img {
+              height: auto;
+          }
+      }
+  }
+
+  .movie-display {
+      .movie-list {
+          grid-template-columns: 1fr 1fr 1fr;
+          top: 5em;
+      }
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  header {
+      nav {
+          .search-bar {
+              max-width: 250px;
+              margin-right: 2em;
+
+              #search-input {
+                  font-size: 1rem;
+                  min-width: 250px;
+              }
+
+              #search-input::placeholder {
+                  font-size: 1rem;
+              }
+          }
+
+          .search-bar::after {
+              min-width: 300px;
+          }
+
+          .help-button {
+              width: 95px;
+          }
+      }
+
+      .hero-text {
+          height: 25em;
+
+          h1 {
+              margin-top: -3em;
+          }
+      }
+  }
+  
+  .movie-display {
+      .movie-list {
+          grid-template-columns: 1fr 1fr 1fr 1fr;
+      }
+  }
+}
+
+
+@media screen and (min-width: 1200px) {
+  header {
+      nav {
+          img {
+              max-width: 180px;
+          }
+
+          .search-bar {
+              max-width: 300px;
+
+              #search-input {
+                  min-width: 330px;
+              }
+          }
+
+          .search-bar::after {
+              min-width: 380px;
+          }
+
+          .help-button {
+              width: 100px;
+          }
+      }
+
+      .hero-image {
+          img {
+              top: -4em;
+          }
+      }
+  }
+
+  .movie-display {
+      .movie-list {
+          grid-gap: 2.5em;
+
+          .movies {
+            .movie-poster {
+              max-width: 260px;
+              height: 365px;
+            }
+          }
+      }
+  }
+}
