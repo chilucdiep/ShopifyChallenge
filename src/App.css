@@ -242,6 +242,7 @@ header .hero-text h2 {
   opacity: 0;
   -webkit-transition: all .6s ease-out;
   transition: all .6s ease-out;
+  cursor: pointer;
 }
 
 .movie-display .movie-list .movies:hover {
@@ -377,6 +378,9 @@ header .hero-text h2 {
   .movie-display .movie-list .movies .movie-poster {
     max-width: 260px;
     height: 365px;
+  }
+  .movie-display .movie-list .movies .overlay-button {
+    top: 18em;
   }
 }
 /*# sourceMappingURL=App.css.map */

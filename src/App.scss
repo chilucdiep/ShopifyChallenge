@@ -195,6 +195,7 @@ header {
         backdrop-filter: blur(7px);
         opacity: 0;
         transition: all .6s ease-out;
+        cursor: pointer;
       }
     }
 
@@ -362,6 +363,10 @@ header {
             .movie-poster {
               max-width: 260px;
               height: 365px;
+            }
+
+            .overlay-button {
+              top: 18em;
             }
           }
       }
