@@ -8,7 +8,7 @@ const App = () => {
   const [searchInput, setSearchInput] = React.useState('')
 
 const getMovieRequest = async() => {
-  const url = `http://www.omdbapi.com/?s=${searchInput}&apikey=2bce123b`
+  const url = `https://www.omdbapi.com/?s=${searchInput}&apikey=2bce123b`
 
   const response = await fetch(url)
   const responseJson = await response.json()
