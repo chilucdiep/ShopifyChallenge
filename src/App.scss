@@ -138,31 +138,31 @@ header {
   }
 
   .hero-image {
-      display: flex;
-      justify-content: center;
-      width: 100%;
+    display: flex;
+    justify-content: center;
+    width: 100%;
 
-      img {
-          position: absolute;
-          top: 0;
-          z-index: -2;
-          height: 25em;
-      }
+    img {
+        position: absolute;
+        top: 0;
+        z-index: -2;
+        height: 25em;
+    }
   }
 
   .hero-text {
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      height: 15em;
-      margin-top: 5em;
-      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 50%, #000000 40%, #151515 100%, #151515 100%);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 15em;
+    margin-top: 5em;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 50%, #000000 40%, #151515 100%, #151515 100%);
 
-      h2 {
-          margin-top: .4em;
-          color: #CFCFCF;
-      }
+    h2 {
+        margin-top: .4em;
+        color: #CFCFCF;
+    }
   }
 }
 
@@ -171,7 +171,6 @@ header {
   position: relative;
   display: flex;
   justify-content: center;
-
 
   .movie-list {
     display: grid;
@@ -367,6 +366,15 @@ header {
           img {
               top: -4em;
           }
+      }
+
+      .bg {
+        height: 600px;
+        width: 100%;
+        background-color: #151515;
+        position: absolute;
+        top: 35em;
+        z-index: -1;
       }
   }
 

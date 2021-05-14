@@ -25,7 +25,8 @@ function Header(props) {
             <div className="hero-text">
                 <h1>Movie awards for entrepreneurs</h1>
                 <h2>Nominate your 5 favorite movies</h2>
-            </div>        
+            </div>
+            <div className="bg"></div>     
         </header>
     )
 }

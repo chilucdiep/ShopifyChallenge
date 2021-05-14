@@ -389,6 +389,14 @@ header .hero-text h2 {
   header .hero-image img {
     top: -4em;
   }
+  header .bg {
+    height: 600px;
+    width: 100%;
+    background-color: #151515;
+    position: absolute;
+    top: 35em;
+    z-index: -1;
+  }
   .movie-display .movie-list {
     grid-gap: 2.5em;
   }
