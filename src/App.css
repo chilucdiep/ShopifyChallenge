@@ -12,21 +12,6 @@ body {
   overflow-x: hidden;
 }
 
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-textarea:-webkit-autofill,
-textarea:-webkit-autofill:hover,
-textarea:-webkit-autofill:focus,
-select:-webkit-autofill,
-select:-webkit-autofill:hover,
-select:-webkit-autofill:focus {
-  -webkit-transition: background-color 5000000s ease-in-out 0s !important;
-  transition: background-color 5000000s ease-in-out 0s !important;
-  background-color: #000000;
-  -webkit-text-fill-color: #cfcfcf !important;
-}
-
 img {
   width: 100%;
 }
@@ -49,6 +34,21 @@ h3 {
 p {
   font-size: 0.5rem;
   font-weight: 400;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-transition: background-color 5000000s ease-in-out 0s !important;
+  transition: background-color 5000000s ease-in-out 0s !important;
+  background-color: #000000;
+  -webkit-text-fill-color: #cfcfcf !important;
 }
 
 .wrapper {
@@ -207,6 +207,7 @@ header .hero-text h2 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  top: -8em;
 }
 
 .movie-display .movie-list {
@@ -216,8 +217,7 @@ header .hero-text h2 {
       grid-template-columns: 1fr 1fr;
   justify-items: center;
   grid-gap: 1rem;
-  position: absolute;
-  top: -8em;
+  padding-bottom: 2em;
 }
 
 .movie-display .movie-list .movies {
@@ -228,14 +228,14 @@ header .hero-text h2 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-transition: all .4s ease-out;
-  transition: all .4s ease-out;
+  -webkit-transition: all .2s ease-out;
+  transition: all .2s ease-out;
   position: relative;
 }
 
 .movie-display .movie-list .movies .movie-poster {
   max-width: 200px;
-  height: 320px;
+  height: 280px;
   border-radius: .4rem;
   cursor: pointer;
   margin-bottom: .6em;
@@ -249,17 +249,24 @@ header .hero-text h2 {
 
 .movie-display .movie-list .movies .overlay-button {
   position: absolute;
-  top: 16em;
+  top: 13.5em;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   width: 150px;
   -webkit-backdrop-filter: blur(7px);
           backdrop-filter: blur(7px);
+  background: rgba(0, 0, 0, 0.1);
   opacity: 0;
-  -webkit-transition: all .6s ease-out;
-  transition: all .6s ease-out;
+  -webkit-transition: all .5s ease-out;
+  transition: all .5s ease-out;
   cursor: pointer;
+}
+
+.movie-display .movie-list .movies .overlay-button:hover {
+  opacity: 0.9;
+  -webkit-transform: translateX(-50%) scale(1.03);
+          transform: translateX(-50%) scale(1.03);
 }
 
 .movie-display .movie-list .movies:hover {
@@ -269,6 +276,84 @@ header .hero-text h2 {
 
 .movie-display .movie-list .movies:hover .overlay-button {
   opacity: 1;
+}
+
+.nomination-banner {
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+  text-align: center;
+  background: rgba(109, 109, 109, 0.1);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  padding: 2em 0;
+  height: 140px;
+}
+
+.nomination-banner .nominations {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 1.5em;
+  max-width: 350px;
+  max-height: 10px;
+  margin: auto;
+}
+
+.nomination-banner .nominations .nominated {
+  margin-right: 1em;
+  display: -ms-grid;
+  display: grid;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 5em;
+  position: relative;
+  max-height: 10px;
+}
+
+.nomination-banner .nominations .nominated .nominated-bubble {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 3em;
+  -webkit-transition: all .5s ease-out;
+  transition: all .5s ease-out;
+  position: relative;
+}
+
+.nomination-banner .nominations .nominated .nominated-name-hover {
+  display: none;
+  position: absolute;
+  top: 2.2em;
+  -webkit-transition: all .5s ease-in;
+  transition: all .5s ease-in;
+}
+
+.nomination-banner .nominations .nominated:hover {
+  cursor: pointer;
+}
+
+.nomination-banner .nominations .nominated:hover .nominated-bubble {
+  -webkit-transform: scale(0.7);
+          transform: scale(0.7);
+  margin-bottom: 0em;
+  top: -1.9em;
+}
+
+.nomination-banner .nominations .nominated:hover .nominated-name-hover {
+  display: inline;
+}
+
+.nomination-banner .nominations .nominated:last-child {
+  margin-right: 0;
 }
 
 @media screen and (min-width: 600px) {
@@ -324,10 +409,32 @@ header .hero-text h2 {
   header .hero-image img {
     height: auto;
   }
+  .movie-display {
+    top: 5em;
+  }
   .movie-display .movie-list {
     -ms-grid-columns: 1fr 1fr 1fr;
         grid-template-columns: 1fr 1fr 1fr;
-    top: 5em;
+    padding-bottom: 10em;
+  }
+  .nomination-banner {
+    height: 200px;
+  }
+  .nomination-banner .nominations {
+    max-width: 750px;
+    padding-top: 1.8em;
+  }
+  .nomination-banner .nominations .nominated .nominated-bubble {
+    height: 80px;
+    width: 80px;
+  }
+  .nomination-banner .nominations .nominated .nominated-name-hover {
+    top: 3em;
+  }
+  .nomination-banner .nominations .nominated:hover .nominated-bubble {
+    -webkit-transform: scale(0.7);
+            transform: scale(0.7);
+    top: -2.5em;
   }
 }
 
@@ -390,11 +497,11 @@ header .hero-text h2 {
     top: -4em;
   }
   header .bg {
-    height: 600px;
+    height: 300px;
     width: 100%;
     background-color: #151515;
-    position: absolute;
-    top: 35em;
+    position: relative;
+    top: 0;
     z-index: -1;
   }
   .movie-display .movie-list {
@@ -405,6 +512,7 @@ header .hero-text h2 {
     height: 365px;
   }
   .movie-display .movie-list .movies .overlay-button {
+    width: 200px;
     top: 18em;
   }
 }

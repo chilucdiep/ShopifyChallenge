@@ -10,7 +10,7 @@ const MovieList = (props) => {
                     {props.movies.map((movie, index) => <div className='movies'>
                         <img src={movie.Poster} className='movie-poster' alt='Movie poster'></img>
                         <p className='movie-name'>{movie.Title} ({movie.Year})</p>
-                        <img className="overlay-button" src={nomationButton} alt="Nominate button"></img>
+                        <img onClick={() => props.handleNominationsClick(movie)} className="overlay-button" src={nomationButton} alt="Nominate button"></img>
                     </div>)}
                 </div>
             </div>

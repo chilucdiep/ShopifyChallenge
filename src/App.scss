@@ -19,20 +19,6 @@ body {
   overflow-x: hidden;
 }
 
-input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus,
-textarea:-webkit-autofill,
-textarea:-webkit-autofill:hover,
-textarea:-webkit-autofill:focus,
-select:-webkit-autofill,
-select:-webkit-autofill:hover,
-select:-webkit-autofill:focus {
-  transition: background-color 5000000s ease-in-out 0s !important;
-  background-color: #000000;
-  -webkit-text-fill-color: #cfcfcf !important;
-}
-
 img {
   width: 100%;
 }
@@ -55,6 +41,20 @@ h3 {
 p {
   font-size: $mobile-p-fontsize;
   font-weight: 400;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  transition: background-color 5000000s ease-in-out 0s !important;
+  background-color: #000000;
+  -webkit-text-fill-color: #cfcfcf !important;
 }
 
 .wrapper {
@@ -171,24 +171,24 @@ header {
   position: relative;
   display: flex;
   justify-content: center;
+  top: -8em;
 
   .movie-list {
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-items: center;
     grid-gap: 1rem;
-    position: absolute;
-    top: -8em;
+    padding-bottom: 2em;
 
     .movies {
       display: flex;
       flex-direction: column;
-      transition: all .4s ease-out;
+      transition: all .2s ease-out;
       position: relative;
 
       .movie-poster {
         max-width: 200px;
-        height: 320px;
+        height: 280px;
         border-radius: .4rem;
         cursor: pointer;
         margin-bottom: .6em;
@@ -202,14 +202,20 @@ header {
 
       .overlay-button {
         position: absolute;
-        top: 16em;
+        top: 13.5em;
         left: 50%;
         transform: translateX(-50%);
         width: 150px;
         backdrop-filter: blur(7px);
+        background: rgba(0, 0, 0, 0.1);
         opacity: 0;
-        transition: all .6s ease-out;
+        transition: all .5s ease-out;
         cursor: pointer;
+      }
+      
+      .overlay-button:hover {
+        opacity: 0.9;
+        transform: translateX(-50%) scale(1.03);
       }
     }
 
@@ -223,6 +229,71 @@ header {
   }
 }
 
+.nomination-banner {
+  position: sticky;
+  bottom: 0;
+  text-align: center;
+  background: rgba(109, 109, 109, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 2em 0;
+  height: 140px;
+
+  .nominations {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    padding-top: 1.5em;
+    max-width: 350px;
+    max-height: 10px;
+    margin: auto;
+
+    .nominated {
+      margin-right: 1em;
+      display: grid;
+      justify-items: center;
+      align-items: center;
+      margin-bottom: 5em;
+      position: relative;
+      max-height: 10px;
+
+      .nominated-bubble {
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-bottom: 3em;
+        transition: all .5s ease-out;
+        position: relative;
+      }
+
+      .nominated-name-hover {
+        display: none;
+        position: absolute;
+        top: 2.2em;
+        transition: all .5s ease-in;
+      }
+    }
+
+    .nominated:hover {
+      cursor: pointer;
+      
+      .nominated-bubble {
+        transform: scale(0.7);
+        margin-bottom: 0em;
+        top: -1.9em;
+      }
+
+      .nominated-name-hover {
+        display: inline;
+      }
+    }
+
+    .nominated:last-child {
+      margin-right: 0;
+    }
+  }
+}
 
 
 @media screen and (min-width: 600px) {
@@ -288,10 +359,39 @@ header {
   }
 
   .movie-display {
-      .movie-list {
-          grid-template-columns: 1fr 1fr 1fr;
-          top: 5em;
+    top: 5em;
+
+    .movie-list {
+        grid-template-columns: 1fr 1fr 1fr;
+        padding-bottom: 10em;
+    }
+  }
+
+  .nomination-banner {
+    height: 200px;
+
+    .nominations {
+      max-width: 750px;
+      padding-top: 1.8em;
+
+      .nominated {
+        .nominated-bubble {
+          height: 80px;
+          width: 80px;
+        }
+
+        .nominated-name-hover {
+          top: 3em;
+        }
       }
+
+      .nominated:hover {        
+        .nominated-bubble {
+          transform: scale(0.7);
+          top: -2.5em;
+        }
+      }
+    }
   }
 }
 
@@ -369,11 +469,11 @@ header {
       }
 
       .bg {
-        height: 600px;
+        height: 300px;
         width: 100%;
         background-color: #151515;
-        position: absolute;
-        top: 35em;
+        position: relative;
+        top: 0;
         z-index: -1;
       }
   }
@@ -389,6 +489,7 @@ header {
             }
 
             .overlay-button {
+              width: 200px;
               top: 18em;
             }
           }
