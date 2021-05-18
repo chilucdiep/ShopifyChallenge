@@ -290,6 +290,11 @@ header .hero-text h2 {
   height: 140px;
 }
 
+.nomination-banner .watermark {
+  color: #595959;
+  margin-top: 1em;
+}
+
 .nomination-banner .nominations {
   display: -ms-grid;
   display: grid;

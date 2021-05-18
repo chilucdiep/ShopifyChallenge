@@ -26,18 +26,30 @@ React.useEffect(() => {
 }, [searchInput])
 
 const addNominations = (movie) => {
-  setNominations([...nominations, movie])
-  const newMovieList = [...movies]
-  const movieIndex = movies.indexOf(movie)
-  const removed = newMovieList.splice(movieIndex, 1)
-  setMovies(newMovieList)
+  if (nominations.length === 5) {
+    console.log("max")
+  } else {
+    setNominations([...nominations, movie])
+    const newMovieList = [...movies]
+    const movieIndex = movies.indexOf(movie)
+    const removed = newMovieList.splice(movieIndex, 1)
+    setMovies(newMovieList)
+  }
+}
+
+const removeNominations = (movie) => {
+  setMovies([...movies, movie])
+  const newNominationList = [...nominations]
+  const nominationIndex = nominations.indexOf(movie)
+  const removed = newNominationList.splice(nominationIndex, 1)
+  setNominations(newNominationList)
 }
 
   return (
   <div>
     <Header searchInput={searchInput} setSearchInput={setSearchInput}/>
     <MovieList movies = {movies} handleNominationsClick={addNominations}/>
-    <NominationBanner movies = {nominations} />
+    <NominationBanner movies = {nominations} handleRemoveClick={removeNominations}/>
   </div>
   )
 };
