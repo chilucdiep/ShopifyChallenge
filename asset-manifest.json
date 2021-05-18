@@ -1,15 +1,16 @@
 {
   "files": {
-    "main.css": "/ShopifyChallenge/static/css/main.3e12674f.chunk.css",
-    "main.js": "/ShopifyChallenge/static/js/main.724c8be7.chunk.js",
-    "main.js.map": "/ShopifyChallenge/static/js/main.724c8be7.chunk.js.map",
+    "main.css": "/ShopifyChallenge/static/css/main.3e76d1ed.chunk.css",
+    "main.js": "/ShopifyChallenge/static/js/main.0831a45d.chunk.js",
+    "main.js.map": "/ShopifyChallenge/static/js/main.0831a45d.chunk.js.map",
     "runtime-main.js": "/ShopifyChallenge/static/js/runtime-main.42222e69.js",
     "runtime-main.js.map": "/ShopifyChallenge/static/js/runtime-main.42222e69.js.map",
-    "static/js/2.41b106d4.chunk.js": "/ShopifyChallenge/static/js/2.41b106d4.chunk.js",
-    "static/js/2.41b106d4.chunk.js.map": "/ShopifyChallenge/static/js/2.41b106d4.chunk.js.map",
+    "static/js/2.2071541e.chunk.js": "/ShopifyChallenge/static/js/2.2071541e.chunk.js",
+    "static/js/2.2071541e.chunk.js.map": "/ShopifyChallenge/static/js/2.2071541e.chunk.js.map",
     "index.html": "/ShopifyChallenge/index.html",
-    "static/css/main.3e12674f.chunk.css.map": "/ShopifyChallenge/static/css/main.3e12674f.chunk.css.map",
-    "static/js/2.41b106d4.chunk.js.LICENSE.txt": "/ShopifyChallenge/static/js/2.41b106d4.chunk.js.LICENSE.txt",
+    "static/css/main.3e76d1ed.chunk.css.map": "/ShopifyChallenge/static/css/main.3e76d1ed.chunk.css.map",
+    "static/js/2.2071541e.chunk.js.LICENSE.txt": "/ShopifyChallenge/static/js/2.2071541e.chunk.js.LICENSE.txt",
+    "static/media/Close Icon.57a29859.svg": "/ShopifyChallenge/static/media/Close Icon.57a29859.svg",
     "static/media/Help button.60f218fd.svg": "/ShopifyChallenge/static/media/Help button.60f218fd.svg",
     "static/media/Hero.53ee0789.svg": "/ShopifyChallenge/static/media/Hero.53ee0789.svg",
     "static/media/Nominate button.4b5c1e6c.svg": "/ShopifyChallenge/static/media/Nominate button.4b5c1e6c.svg",
@@ -18,8 +19,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.42222e69.js",
-    "static/js/2.41b106d4.chunk.js",
-    "static/css/main.3e12674f.chunk.css",
-    "static/js/main.724c8be7.chunk.js"
+    "static/js/2.2071541e.chunk.js",
+    "static/css/main.3e76d1ed.chunk.css",
+    "static/js/main.0831a45d.chunk.js"
   ]
 }
