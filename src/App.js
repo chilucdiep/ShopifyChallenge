@@ -7,6 +7,7 @@ import NominationBanner from './components/NominationBanner';
 const App = () => {
   const [movies, setMovies] = React.useState([])
   const [nominations, setNominations] = React.useState([])
+  const [banner, setBanner] = React.useState(false)
   const [searchInput, setSearchInput] = React.useState('')
 
 const getMovieRequest = async() => {
@@ -30,6 +31,7 @@ const addNominations = (movie) => {
     console.log("max")
   } else {
     setNominations([...nominations, movie])
+    setBanner(true)
     const newMovieList = [...movies]
     const movieIndex = movies.indexOf(movie)
     const removed = newMovieList.splice(movieIndex, 1)
@@ -45,11 +47,14 @@ const removeNominations = (movie) => {
   setNominations(newNominationList)
 }
 
+const nominationMarkup = banner ? <NominationBanner movies = {nominations} handleRemoveClick={removeNominations}/> : null;
+
   return (
   <div>
     <Header searchInput={searchInput} setSearchInput={setSearchInput}/>
     <MovieList movies = {movies} handleNominationsClick={addNominations}/>
-    <NominationBanner movies = {nominations} handleRemoveClick={removeNominations}/>
+    {/* <NominationBanner movies = {nominations} handleRemoveClick={removeNominations}/> */}
+    {nominationMarkup}
   </div>
   )
 };
