@@ -26,34 +26,55 @@ React.useEffect(() => {
 
 }, [searchInput])
 
-const addNominations = (movie) => {
+const handleAddNominations = (movie) => {
   if (nominations.length === 5) {
     console.log("max")
   } else {
     setNominations([...nominations, movie])
     setBanner(true)
-    const newMovieList = [...movies]
-    const movieIndex = movies.indexOf(movie)
-    const removed = newMovieList.splice(movieIndex, 1)
-    setMovies(newMovieList)
+
+    // movies.forEach((ok) => {
+    //   if (ok === movie) {
+    //     const newMovieList = [...movies]
+    //     var movieIndex = movies.indexOf(ok)
+    //     const removed = newMovieList.splice(movieIndex, 1)
+    //     setMovies(newMovieList)
+    //   }
+    // })
+    
+    // const newMovieList = [...movies]
+    // const movieIndex = movies.indexOf(movie)
+    // const removed = newMovieList.splice(movieIndex, 1)
+    // setMovies(newMovieList)
   }
 }
 
 const removeNominations = (movie) => {
-  setMovies([...movies, movie])
+  // setMovies([...movies, movie])
+  //movies.splice(movieIndex, 0, movie)
   const newNominationList = [...nominations]
   const nominationIndex = nominations.indexOf(movie)
   const removed = newNominationList.splice(nominationIndex, 1)
   setNominations(newNominationList)
+
+  if (newNominationList.length < 1 || newNominationList == undefined) {
+    setBanner(false)
+  }
+
+  // movies.forEach((ok) => {
+  //   if (ok === movie) {
+  //     const movieIndex = movies.indexOf(ok)
+  //     console.log(movieIndex)
+  //   }
+  // })
 }
 
-const nominationMarkup = banner ? <NominationBanner movies = {nominations} handleRemoveClick={removeNominations}/> : null;
+const nominationMarkup = banner ? <NominationBanner movies={nominations} handleRemoveClick={removeNominations}/> : null;
 
   return (
   <div>
     <Header searchInput={searchInput} setSearchInput={setSearchInput}/>
-    <MovieList movies = {movies} handleNominationsClick={addNominations}/>
-    {/* <NominationBanner movies = {nominations} handleRemoveClick={removeNominations}/> */}
+    <MovieList movies={movies} onNominationsClick={handleAddNominations} nominations={nominations} />
     {nominationMarkup}
   </div>
   )

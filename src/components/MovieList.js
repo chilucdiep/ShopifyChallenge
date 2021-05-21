@@ -1,17 +1,15 @@
 import React from 'react'
-import nomationButton from '../images/Nominate button.svg'
+import Movie from './Movies'
 
 
-const MovieList = (props) => {
+const MovieList = ({movies, onNominationsClick, nominations}) => {
     return (
         <div className='wrapper'>
             <div className='movie-display'>
                 <div className='movie-list'>
-                    {props.movies.map((movie, index) => <div className='movies'>
-                        <img src={movie.Poster} className='movie-poster' alt='Movie poster'></img>
-                        <p className='movie-name'>{movie.Title} ({movie.Year})</p>
-                        <img onClick={() => props.handleNominationsClick(movie)} className="overlay-button" src={nomationButton} alt="Nominate button"></img>
-                    </div>)}
+                    {movies.map((movie) =>
+                        <Movie movie={movie} onNominationsClick={onNominationsClick} nominations={nominations} />
+                    )}
                 </div>
             </div>
         </div>
