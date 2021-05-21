@@ -8,6 +8,7 @@ const App = () => {
   const [movies, setMovies] = React.useState([])
   const [nominations, setNominations] = React.useState([])
   const [banner, setBanner] = React.useState(false)
+  const [noClick, setNoClick] = React.useState(false)
   const [searchInput, setSearchInput] = React.useState('')
 
 const getMovieRequest = async() => {
@@ -28,24 +29,10 @@ React.useEffect(() => {
 
 const handleAddNominations = (movie) => {
   if (nominations.length === 5) {
-    console.log("max")
+    setNoClick(true)
   } else {
     setNominations([...nominations, movie])
     setBanner(true)
-
-    // movies.forEach((ok) => {
-    //   if (ok === movie) {
-    //     const newMovieList = [...movies]
-    //     var movieIndex = movies.indexOf(ok)
-    //     const removed = newMovieList.splice(movieIndex, 1)
-    //     setMovies(newMovieList)
-    //   }
-    // })
-    
-    // const newMovieList = [...movies]
-    // const movieIndex = movies.indexOf(movie)
-    // const removed = newMovieList.splice(movieIndex, 1)
-    // setMovies(newMovieList)
   }
 }
 
@@ -60,13 +47,6 @@ const removeNominations = (movie) => {
   if (newNominationList.length < 1 || newNominationList == undefined) {
     setBanner(false)
   }
-
-  // movies.forEach((ok) => {
-  //   if (ok === movie) {
-  //     const movieIndex = movies.indexOf(ok)
-  //     console.log(movieIndex)
-  //   }
-  // })
 }
 
 const nominationMarkup = banner ? <NominationBanner movies={nominations} handleRemoveClick={removeNominations}/> : null;
@@ -74,7 +54,7 @@ const nominationMarkup = banner ? <NominationBanner movies={nominations} handleR
   return (
   <div>
     <Header searchInput={searchInput} setSearchInput={setSearchInput}/>
-    <MovieList movies={movies} onNominationsClick={handleAddNominations} nominations={nominations} />
+    <MovieList movies={movies} onNominationsClick={handleAddNominations} nominations={nominations} noClick={noClick} />
     {nominationMarkup}
   </div>
   )

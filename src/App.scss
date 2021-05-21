@@ -205,8 +205,8 @@ header {
       .overlay-button {
         position: absolute;
         top: 13.5em;
-        left: 50%;
-        transform: translateX(-50%);
+        display: flex;
+        align-self: center;
         width: 150px;
         backdrop-filter: blur(7px);
         background: rgba(0, 0, 0, 0.1);
@@ -217,7 +217,15 @@ header {
       
       .overlay-button:hover {
         opacity: 0.9;
-        transform: translateX(-50%) scale(1.03);
+        transform: scale(1.03);
+      }
+
+      .disabled {
+        cursor: not-allowed;
+      }
+
+      .disabled:active {
+        pointer-events: none;
       }
     }
 
