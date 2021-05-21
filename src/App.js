@@ -43,6 +43,7 @@ const removeNominations = (movie) => {
   const nominationIndex = nominations.indexOf(movie)
   const removed = newNominationList.splice(nominationIndex, 1)
   setNominations(newNominationList)
+  setNoClick(false)
 
   if (newNominationList.length < 1 || newNominationList == undefined) {
     setBanner(false)
