@@ -1,14 +1,14 @@
 import React from 'react'
 import nomationButton from '../images/Nominate button.svg'
 
-const Movies = ({movie, onNominationsClick, nominations, noClick}) => {
+const Movies = ({ movie, onNominationsClick, nominations, noClick }) => {
     let buttonClassName = "overlay-button"
     const nominatedTitle = nominations.map(nominated => nominated.Title)
 
     if (noClick === false && buttonClassName === "overlay-button disabled") {
-        buttonClassName -= " disabled" 
-    } else if (noClick === true){
-        buttonClassName += " disabled" 
+        buttonClassName -= " disabled"
+    } else if (noClick === true) {
+        buttonClassName += " disabled"
     }
 
     if (nominatedTitle.includes(movie.Title)) {

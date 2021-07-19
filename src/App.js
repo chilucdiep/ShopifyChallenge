@@ -11,53 +11,51 @@ const App = () => {
   const [noClick, setNoClick] = React.useState(false)
   const [searchInput, setSearchInput] = React.useState('')
 
-const getMovieRequest = async() => {
-  const url = `https://www.omdbapi.com/?s=${searchInput}&apikey=2bce123b`
+  const getMovieRequest = async () => {
+    const url = `https://www.omdbapi.com/?s=${searchInput}&apikey=2bce123b`
 
-  const response = await fetch(url)
-  const responseJson = await response.json()
+    const response = await fetch(url)
+    const responseJson = await response.json()
 
-  if (responseJson.Search) {
-    setMovies(responseJson.Search)
+    if (responseJson.Search) {
+      setMovies(responseJson.Search)
+    }
   }
-}
 
-React.useEffect(() => {
-  getMovieRequest(searchInput)
+  React.useEffect(() => {
+    getMovieRequest(searchInput)
 
-}, [searchInput])
+  }, [searchInput])
 
-const handleAddNominations = (movie) => {
-  if (nominations.length === 5) {
-    setNoClick(true)
-  } else {
-    setNominations([...nominations, movie])
-    setBanner(true)
+  const handleAddNominations = (movie) => {
+    if (nominations.length === 5) {
+      setNoClick(true)
+    } else {
+      setNominations([...nominations, movie])
+      setBanner(true)
+    }
   }
-}
 
-const removeNominations = (movie) => {
-  // setMovies([...movies, movie])
-  //movies.splice(movieIndex, 0, movie)
-  const newNominationList = [...nominations]
-  const nominationIndex = nominations.indexOf(movie)
-  const removed = newNominationList.splice(nominationIndex, 1)
-  setNominations(newNominationList)
-  setNoClick(false)
+  const removeNominations = (movie) => {
+    const newNominationList = [...nominations]
+    const nominationIndex = nominations.indexOf(movie)
+    const removed = newNominationList.splice(nominationIndex, 1)
+    setNominations(newNominationList)
+    setNoClick(false)
 
-  if (newNominationList.length < 1 || newNominationList == undefined) {
-    setBanner(false)
+    if (newNominationList.length < 1 || newNominationList == undefined) {
+      setBanner(false)
+    }
   }
-}
 
-const nominationMarkup = banner ? <NominationBanner movies={nominations} handleRemoveClick={removeNominations}/> : null;
+  const nominationMarkup = banner ? <NominationBanner movies={nominations} handleRemoveClick={removeNominations} /> : null;
 
   return (
-  <div>
-    <Header searchInput={searchInput} setSearchInput={setSearchInput}/>
-    <MovieList movies={movies} onNominationsClick={handleAddNominations} nominations={nominations} noClick={noClick} />
-    {nominationMarkup}
-  </div>
+    <div>
+      <Header setSearchInput={setSearchInput} />
+      <MovieList movies={movies} onNominationsClick={handleAddNominations} nominations={nominations} noClick={noClick} />
+      {nominationMarkup}
+    </div>
   )
 };
 

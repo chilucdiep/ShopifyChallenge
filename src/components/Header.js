@@ -4,14 +4,14 @@ import searchIcon from '../images/24/basic/search.svg'
 import helpButton from '../images/Help button.svg'
 import hero from '../images/Hero.svg'
 
-function Header(props) {
+function Header({ setSearchInput }) {
     return (
         <header>
             <div className="nav-bg"></div>
             <nav className="wrapper">
                 <a href="index.html"><img src={logo} alt="The Shoppies logo"></img></a>
                 <div className="search-bar">
-                    <input type="text" id="search-input" value={props.value} onChange={(e) => props.setSearchInput(e.target.value)} placeholder="Search the title of a movie..."></input>
+                    <input type="text" id="search-input" onChange={(e) => setSearchInput(e.target.value)} placeholder="Search the title of a movie..."></input>
                     <img src={searchIcon} alt="Search icon"></img>
                 </div>
                 <div>
@@ -26,7 +26,7 @@ function Header(props) {
                 <h1>Movie awards for entrepreneurs</h1>
                 <h2>Nominate your 5 favorite movies</h2>
             </div>
-            <div className="bg"></div>     
+            <div className="bg"></div>
         </header>
     )
 }

@@ -2,7 +2,7 @@ import React from 'react'
 import Movie from './Movies'
 
 
-const MovieList = ({movies, onNominationsClick, nominations, noClick}) => {
+const MovieList = ({ movies, onNominationsClick, nominations, noClick }) => {
     return (
         <div className='wrapper'>
             <div className='movie-display'>
